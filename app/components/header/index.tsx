@@ -66,7 +66,7 @@ export default function Header({ loading }: headerProps) {
             const cookieData = await checkAuthInClient('athtk')
             if (!cookieData || cookieData == '') {
                 setUserData(false)
-                // return router.push('/login')
+                return router.push('/login')
             }
             setUserData(cookieData)
         }
