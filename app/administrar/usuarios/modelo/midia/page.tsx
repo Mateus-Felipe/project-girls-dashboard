@@ -62,7 +62,7 @@ export default function page() {
     return (
         <div className="w-full">
             <Header loading={loading} />
-            <Title className="mt-16">{loading ? 'Carregando..' : data?.length + ' ' + `${data?.length > 0 ? data?.length > 1 ? 'Mídias' : 'Mídia' : 'Mídias'} aguardando aprovação de mídia `}</Title>
+            <Title className="mt-16">{loading ? 'Carregando..' : data?.length + ' ' + `${data?.length > 0 ? data?.length > 1 ? 'Mídias' : 'Mídia' : 'Mídias'} aguardando aprovação `}</Title>
             <div className="w-full text-center mb-16">
                 <Link className="text-center font-bold text-dark-blue" href='/administrar/usuarios/modelo'>Ver usuários aguardando aprovação</Link>
             </div>
