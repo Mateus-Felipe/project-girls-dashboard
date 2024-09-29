@@ -13,7 +13,7 @@ interface fetchProps {
 
 const axiosFetch = async ({ type, url, body, addAuth, customHeaders, customUrl }: fetchProps) => {
 
-    var urlToRequest = customUrl ? customUrl : (process.env.DEV == 'true' ? 'http://localhost:3500' : '') + url;
+    var urlToRequest = customUrl ? customUrl : (process.env.DEV == 'true' ? 'http://localhost:3500' : 'https://ydrqpoqitg.execute-api.sa-east-1.amazonaws.com/dev') + url;
     if (!urlToRequest && !customUrl) {
         return {
             error: true,
