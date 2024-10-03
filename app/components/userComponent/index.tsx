@@ -23,7 +23,7 @@ export default function UserComponent({ data }: UserComponentProps) {
                             /> : <p>Sem foto de perfil</p>
                     }
                 </div>
-                <div className="w-11/12 h-[0.5px] bg-bg my-2" />
+                <div className="w-11/12 h-[0.5px] bg-white my-2" />
                 <div className="w-11/12 flex flex-col items-start justify-start">
                     <p><b>Nome</b> - {data.name}</p>
                     <p><b>Id</b> - {data.id}</p>

@@ -44,6 +44,7 @@ export default function login() {
                     true, false
                 ]);
             }
+            setLoading(false)
             return setTxtModal([
                 'Atenção',
                 ['Ocorreu um erro!', fetchData?.data?.response?.data?.message],
@@ -59,7 +60,7 @@ export default function login() {
             setLoading(false)
             return;
         }
-        await setCookieInClient('athtk', fetchData.data.result.token, 0.009)
+        await setCookieInClient('athtk', fetchData.data.result.token, 9)
         router.push('/dashboard')
     }
 

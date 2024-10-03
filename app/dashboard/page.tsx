@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { checkAuthInClient } from "../services/checkAuthInClient";
 import ButtonCustom from "../components/ButtonCustom";
 import Image from "next/image";
-import userIcon from '@/app/images/icons/user.svg'
+import reloadIcon from '@/app/images/icons/reload.svg'
 
 interface StatisticsProps {
     "usersCreated": number,
@@ -19,7 +19,7 @@ interface StatisticsProps {
     "imagesWaitingApprovation": number
 }
 
-export default function page() {
+export default function Tags() {
     const [loading, setLoading] = useState(false);
     const [statisticsData, setStatisticsData] = useState<StatisticsProps | undefined>(undefined)
     const [TxtModal, setTxtModal] = useState([
@@ -42,7 +42,7 @@ export default function page() {
                     ['Aguarde...'],
                     true, true
                 ]);
-                return router.push('/login');
+                // return router.push('/login');
             }
             return setTxtModal([
                 'Atenção',
@@ -54,7 +54,7 @@ export default function page() {
         if (!fetchData.data?.result) {
             setLoading(false)
             setStatisticsData(undefined)
-            return
+            return;
         }
 
         setStatisticsData(fetchData.data?.result);
@@ -71,6 +71,7 @@ export default function page() {
 
                     <ButtonCustom color={['bg-primary-orange', 'hover:bg-dark-orange']} clickFunction={() => router.push('/administrar/usuarios/modelo/midia')}>Aprovar mídias</ButtonCustom>
                     <ButtonCustom clickFunction={() => router.push('/administrar/usuarios/modelo')}>Aprovar usuários</ButtonCustom>
+                    <ButtonCustom clickFunction={() => router.push('/administrar/tags')} color={['bg-green', 'hover:bg-dark-green']} >Gerenciar Tags</ButtonCustom>
                     {
                         !statisticsData &&
                         <ButtonCustom color={['bg-dark-blue', 'hover:bg-darker-blue']} clickFunction={handleStatistics}>Carregar estatísticas</ButtonCustom>
@@ -86,7 +87,7 @@ export default function page() {
                         <div className="w-full flex flex-row items-center justify-center">
                             <Title className="mr-1">Estatísticas</Title>
                             <Image
-                                onClick={handleStatistics} alt="Recarregar" src={userIcon} className="cursor-pointer"
+                                onClick={handleStatistics} alt="Recarregar" src={reloadIcon} className="cursor-pointer h-[40px]"
                             />
                         </div>
                         <div className="w-full flex flex-row flex-wrap items-center justify-between mt-6">

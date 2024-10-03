@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    DEV: "false",
+    DEV: "true",
     PRODUCTION_PAGE: "https://project-girls.vercel.app",
   },
   images: {

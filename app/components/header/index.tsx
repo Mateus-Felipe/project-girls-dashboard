@@ -88,12 +88,13 @@ export default function Header({ loading }: headerProps) {
                 </div>
             </div>
             {/* Menu */}
-            <div className={`w-full h-screen fixed ${isOpen ? 'left-0' : 'backdrop:blur-none -left-full'} z-20 transition-all `} onKeyDown={handleKeyPress} tabIndex={0}>
+            <div className={`w-full h-screen fixed ${isOpen ? 'left-0 backdrop-blur-sm' : 'backdrop-blur-none -left-full'} z-20 transition-all `} onKeyDown={handleKeyPress} tabIndex={0}>
                 <div className="relative flex flex-col text-light-text w-5/12 h-full justify-center items-start overflow-auto bg-dark-bg text-bg">
                     <p className="ml-2 md:ml-10 text-2xl font-bold cursor-pointer" onClick={() => openPage('//')}>Inicio</p>
                     <p className="ml-2 md:ml-10 text-2xl font-bold cursor-pointer" onClick={() => openPage('/administrar/usuarios/modelo/pesquisar')}>Pesquisar modelos</p>
                     <p className="ml-2 md:ml-10 text-2xl font-bold cursor-pointer" onClick={() => openPage('/administrar/usuarios/modelo')}>- Usuários aguardando aprovação</p>
                     <p className="ml-2 md:ml-10 text-2xl font-bold cursor-pointer" onClick={() => openPage('/administrar/usuarios/modelo/midia')}>- Mídias aguardando aprovação</p>
+                    <p className="ml-2 md:ml-10 text-2xl font-bold cursor-pointer" onClick={() => openPage('/administrar/tags')}>Gerenciar Tags</p>
                     <p className="ml-2 md:ml-10 text-2xl text-warning-custom" onClick={() => openPage('/login/')}>Desconectar</p>
                 </div>
             </div>
